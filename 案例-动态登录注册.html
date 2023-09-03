@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            background-image: url(Img/lbimg3.jpg);
+            background-size: 100%;
+            flex-shrink: 0;
+            object-fit: cover;
+        }
+
+        .Mainbox {
+            width: 700px;
+            height: 410px;
+            margin: auto;
+            position: relative;
+            top: 145px;
+            border-radius: 7px;
+        }
+
+        .Box {
+            width: 700px;
+            height: 410px;
+            background-color: rgba(152, 152, 152, 0.5);
+            margin: auto;
+            position: relative;
+            top: 0px;
+            border-radius: 7px;
+            overflow: hidden;
+        }
+
+        .Box .btn-sign {
+            width: 50%;
+            height: 100%;
+            display: inline;
+            float: left;
+            position: relative;
+            left: 0;
+        }
+
+        .sign-box {
+            width: 350px;
+            height: 100%;
+            background-color: rgb(226, 226, 226);
+            display: inline;
+            float: left;
+            position: absolute;
+            left: 0;
+            z-index: 3;
+            transition: all 1.1s;
+        }
+
+        .btn-sign #Sign {
+            width: 225px;
+            height: 45px;
+            margin: auto;
+            border-radius: 25px;
+            border: none;
+            display: block;
+            position: relative;
+            top: 50%;
+            background: linear-gradient(to left, rgb(1 65 85), rgb(0 192 125));
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .sign-input h4 {
+            text-align: center;
+        }
+
+        .sign-box input {
+            position: relative;
+            display: block;
+            margin: auto;
+            border: none;
+            width: 280px;
+            height: 32px;
+            margin-bottom: 15px;
+            border-radius: 2.5px;
+        }
+
+        .sign-box .sign-input {
+            display: block;
+            position: relative;
+            top: 15%;
+        }
+
+        .sign-box button {
+            width: 200px;
+            height: 35px;
+            border-radius: 25px;
+            background: linear-gradient(to left, rgb(1 65 85), rgb(0 192 125));
+            border: none;
+            display: block;
+            margin: auto;
+            color: white;
+            font-weight: bold;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+        .Box .btn-siup {
+            width: 50%;
+            height: 100%;
+            display: inline;
+            float: left;
+            position: relative;
+            left: 0;
+            transition: all 1.1s;
+        }
+
+        .btn-siup #Siup {
+            width: 225px;
+            height: 45px;
+            margin: auto;
+            border-radius: 25px;
+            border: none;
+            display: block;
+            position: relative;
+            top: 50%;
+            background: linear-gradient(to left, rgb(1 65 85), rgb(0 192 125));
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .sign-box .InBox {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .UpBox {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Mainbox">
+        <div class="Box">
+            <div class="btn-sign">
+                <button id="Sign" onclick="Sign()">SIGN IN</button>
+            </div>
+            <div class="btn-siup">
+                <button id="Siup" onclick="Siup()">SIGN UP</button>
+            </div>
+            <div class="sign-box">
+                <div class="sign-input">
+                    <div class="InBox">
+                        <h4>Sign IN</h4>
+                        <input placeholder="UserName" class="User">
+                        <input placeholder="Password" type="password" class="Password">
+                        <button onclick="In()">SIGN IN</button>
+                    </div>
+                    <div class="UpBox" style="display: none;">
+                        <h4>Sign UP</h4>
+                        <input placeholder="UserName">
+                        <input placeholder="Password" type="password">
+                        <input placeholder="E-mail">
+                        <button onclick="Up()">SIGN UP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const TretBox = document.querySelector('.sign-box');
+        const ByIn = document.querySelector('.InBox');
+        const ByUp = document.querySelector('.UpBox');
+        let lock = true;
+        function Siup() {
+            if (!lock) return;
+            TretBox.style.left = 350 * 1 + "px";
+            ByIn.style.display = "none";
+            ByUp.style.display = "block";
+            lock = false;
+            setTimeout(() => {
+                lock = true;
+            }, 1100);
+        }
+        function Sign() {
+            if (!lock) return;
+            TretBox.style.left = 0;
+            ByIn.style.display = "block";
+            ByUp.style.display = "none";
+            lock = false;
+            setTimeout(() => {
+                lock = true;
+            }, 1100);
+        }
+    </script>
+</body>
+
+</html>
